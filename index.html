@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Runway Calculator</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,100&family=Jaro&family=Jersey+10&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="scale-wrapper">
+    <div class="figma-card">
+        <!-- EXACT SVG FROM FIGMA FOR BACKGROUND AND STROKE -->
+        <svg class="bg-svg" width="236" height="349" viewBox="0 0 236 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Figma Original Background -->
+            <path id="card-path" d="M236 5.70525C236 7.74151 230.036 10.5 228 10.5H35.6143C27.4878 10.5002 23.995 20.8108 30.4482 25.75L67.0303 53.75C68.5133 54.8851 70.3297 55.5 72.1973 55.5H228C230.036 55.5 236 58.2586 236 60.2945V319C236 335.569 222.569 349 206 349H30C13.4315 349 0 335.569 0 319V30C0 13.4315 13.4315 0 30 0H233.606C234.928 0 236 1.0718 236 2.39393V5.70525Z" fill="#D9D9D9"></path>
+            
+            <!-- STROKE ANIMATION PATH (Exact same shape as original) -->
+            <path id="stroke-path" d="M236 5.70525C236 7.74151 230.036 10.5 228 10.5H35.6143C27.4878 10.5002 23.995 20.8108 30.4482 25.75L67.0303 53.75C68.5133 54.8851 70.3297 55.5 72.1973 55.5H228C230.036 55.5 236 58.2586 236 60.2945V319C236 335.569 222.569 349 206 349H30C13.4315 349 0 335.569 0 319V30C0 13.4315 13.4315 0 30 0H233.606C234.928 0 236 1.0718 236 2.39393V5.70525Z" fill="none" stroke="transparent" stroke-width="6"></path>
+        </svg>
+
+        <div class="content">
+            <!-- Texts matching the exact classes and copy provided -->
+            <div class="text-0-1-1">Do You have enough to continue to the<br>next months</div>
+            <div class="text-0-1-2"><span style="color: #E12C2C;">RUNWAY</span> <span style="color: #FFFFFF;">CALC</span></div>
+            
+            <form id="calc-form">
+                <label class="text-0-1-7">Total Cash on Hand</label>
+                <input type="text" id="cash" class="input-field" placeholder="0" required>
+                
+                <label class="text-0-1-8">Monthly Burn</label>
+                <input type="text" id="burn" class="input-field" placeholder="0" required>
+                
+                <button type="submit" id="submit-btn" class="submit-btn text-0-1-6">Submit</button>
+            </form>
+
+            <div id="result-view" style="display: none;">
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="pg-fill"></div>
+                </div>
+                <div class="result-text">
+                    You have approximately
+                    <br><strong id="months-val">0.0</strong><br> 
+                    months cash available.
+                </div>
+                <div class="quote" id="result-quote">""</div>
+                <button type="button" id="reset-btn" class="submit-btn text-0-1-6">Recalculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
